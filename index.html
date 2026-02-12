@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Trenitalia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
 
-    <input id="kilometers" type="number" placeholder="Km">
-    <input id="age" type="text" placeholder="Età (minor/adult/old)">
-    <button id="generate">Calcola</button>
-
-    <script src="script.js"></script>
+<body class="bg-success">
+    <div class="container mt-5">
+        <h2 class="text-center text-white mb-4">
+            CALCOLA IL PREZZO DEL TUO BIGLIETTO
+        </h2>
+        <div class="card p-4 shadow rounded">
+            <form id="fill">
+                <div class="row mb-4">
+                    <!-- NAME & SURNAME -->
+                    <div class="col-md-4 text-center">
+                        <label class="form-label text-black">Nome Cognome</label>
+                        <input id="name" class="form-control text-center" placeholder="Salvatore Ritrovato">
+                    </div>
+                    <!-- KILOMETERS -->
+                    <div class="col-md-4 text-center">
+                        <label class="form-label text-black">Km da percorrere</label>
+                        <input id="kilometers" type="number" class="form-control text-center" placeholder="15">
+                    </div>
+                    <!-- AGE -->
+                    <div class="col-md-4 text-center">
+                        <label class="form-label text-black">Fascia d'età</label>
+                        <select id="age" class="form-select text-center">
+                            <option value="minor">Minorenne</option>
+                            <option value="adult">Maggiorenne</option>
+                            <option value="old">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- BUTTONS -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success me-2">Genera</button>
+                    <button type="reset" class="btn btn-dark">Annulla</button>
+                </div>
+            </form>
+            <div class="container mt-4">
+                <div class="card shadow-sm p-3 rounded">
+                    <h4 class="text-center mb-3">Dettagli Passeggeri</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nome Passeggero</th>
+                                    <th>Offerta</th>
+                                    <th>Carrozza</th>
+                                    <th>Codice CP</th>
+                                    <th>Prezzo (€)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- TABLE CONTENT-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
