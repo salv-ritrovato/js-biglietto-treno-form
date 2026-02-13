@@ -1,4 +1,3 @@
-const button = document.getElementById('generate');
 // Constant variables of the form, input and table ID
 const trainForm = document.getElementById('fill');
 const userName = document.getElementById('name');
